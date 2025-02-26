@@ -1,0 +1,51 @@
+name: Deploy Upvote App
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies (if any)
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Test Project (if any test step exists)
+        run: |
+          if [ -f package.json ]; then
+            npm test
+          fi
+
+      - name: ESLint Project (if any lint step exists)
+        run: |
+          if [ -f package.json ]; then
+            npm run lint
+          fi
+
+      - name: Build Project (if any build step exists)
+        run: |
+          if [ -f package.json ]; then
+            npm run build
+          fi
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,32 @@
+/* Global variables */
+:root {
+  --color-default-bg: #f4f6f8;
+  --color-default-arrow: #343a40;
+  --color-selected-bg: #e5e8fd;
+  --color-selected-arrow: #253cf2;
+  --color-gray: #dee2e6;
+  --color-white: #ffffff;
+  --base-font-size: 16px;
+}
+
+/* Global styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  min-width: 4rem;
+  background-color: var(--color-default-bg);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: var(--color-default-arrow);
+}
+
+.button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.selected {
+  background-color: var(--color-selected-bg);
+  color: var(--color-selected-arrow);
+}

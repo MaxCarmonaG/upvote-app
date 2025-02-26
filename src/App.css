@@ -1,0 +1,17 @@
+.section {
+  flex: 1;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  padding: 1.5rem 2.5rem;
+  border: var(--color-gray);
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

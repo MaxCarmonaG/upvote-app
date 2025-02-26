@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import "./App.css";
 import UpvoteList from "./components/UpvoteList";
-import DataContext from "./provider/DataContext";
+import { DataContext } from "./provider";
 
 function App() {
   const { data } = useContext(DataContext);
-  console.log(data);
+
   return (
     <section className="section">
       <div className="container">
-        {data.map(({ key, list }, idx) => (
-          <UpvoteList key={key} list={list} idx={idx} />
+        {data.map(({ key, list, selected }, idx) => (
+          <UpvoteList key={key} list={list} idx={idx} selected={selected} />
         ))}
       </div>
     </section>

@@ -5,6 +5,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import prettierConfig from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
+import vitest from "eslint-plugin-vitest";
 
 export default tseslint.config(
   { ignores: ["dist"] },
@@ -35,6 +36,20 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       "prettier/prettier": "error",
+    },
+  },
+  {
+    files: ["tests/**"],
+    languageOptions: {
+      globals: {
+        ...globals.vitest,
+      },
+    },
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
     },
   }
 );

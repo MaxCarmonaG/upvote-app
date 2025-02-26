@@ -15,7 +15,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
 }) => (
   <button
     onClick={onClick}
-    className={`${styles.button} ${selected && styles.selected}`}
+    className={`${styles.button} ${selected ? styles.selected : ""}`}
     aria-label={ariaLabel}
     type="button"
   >
